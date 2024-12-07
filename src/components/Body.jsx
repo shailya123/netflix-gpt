@@ -1,7 +1,7 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider, useNavigate } from 'react-router-dom';
 import Browse from './Browse'
 import Login from './Login'
-import { createBrowserRouter } from 'react-router-dom'
 
 const Body = () => {
 
@@ -15,10 +15,10 @@ const Body = () => {
             element: <Browse />
         }
     ])
+
     return (
-        <div>
-            <Login />
-            <Browse />
+        <div className='h-screen'>
+            <RouterProvider router={appRouter} />
         </div>
     )
 }
