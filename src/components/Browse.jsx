@@ -26,4 +26,4 @@ const Browse = () => {
   )
 }
 
-export default Browse
+export default Browse;
