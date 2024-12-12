@@ -32,12 +32,12 @@ const GptSearchBar = () => {
         const data = gptMovies.mao(movie => searchMovieTMDB(movie));
 
         const tmdbResults = await Promise.all(data);
-        dispatch(addGptSearchMovies({movieNames:gptMovies,movieResults:tmdbResults}));
+        dispatch(addGptSearchMovies({ movieNames: gptMovies, movieResults: tmdbResults }));
     }
 
     return (
-        <div className='pt-[20%] flex justify-center'>
-            <form className=' bg-black w-1/2 grid grid-cols-12 rounded-md' onSubmit={(e) => e.preventDefault()}>
+        <div className='pt-[35%] md:p-[10%] flex justify-center'>
+            <form className='bg-black w-full md:w-1/2 grid grid-cols-12 rounded-md' onSubmit={(e) => e.preventDefault()}>
                 <input ref={searchText} type="text" className='p-4 m-4 col-span-9' placeholder={lang[langKey].gptSearchPlaceholder} />
                 <button onClick={handleGptSearchClick} className=' m-4 py-2 px-5 bg-red-500 text-white rounded-md col-span-3'>{lang[langKey].search}</button>
             </form>
